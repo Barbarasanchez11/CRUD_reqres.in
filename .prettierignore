@@ -1,0 +1,9 @@
+# Carpetas a ignorar
+node_modules
+dist
+build
+.vite
+
+# Archivos de configuración
+*.lock
+*.log
