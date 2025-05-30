@@ -1,10 +1,10 @@
-import UserList from './pages/UserList'
+import RoutesApp from './routes/Routes'
 import './App.css'
 
 const App = () => {
   return(
     <>
-    <UserList />
+    <RoutesApp />
     </>
   )
 }
