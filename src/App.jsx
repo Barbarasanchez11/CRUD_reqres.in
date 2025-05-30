@@ -1,10 +1,10 @@
-import { useState } from 'react'
+import UserList from './pages/UserList'
 import './App.css'
 
 const App = () => {
   return(
     <>
-    Hola
+    <UserList />
     </>
   )
 }
