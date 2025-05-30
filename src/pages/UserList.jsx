@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const UserList = () => {
   const [user, setUser] = useState([]);
@@ -12,8 +13,9 @@ const UserList = () => {
         headers: {
           'x-api-key': 'reqres-free-v1'
         }
-      });
+        });
       console.log(response)
+      
       setUser(response.data.data);
     } catch (error) {
       console.error('Error fetching users:', error);
@@ -29,11 +31,13 @@ const UserList = () => {
       <h1>Users (Page {page})</h1>
       <div>
         {user.map(user => (
-          <div key={user.id}>
-            <p>{user.first_name} {user.last_name}</p>
-            <p>{user.email}</p>
-            <img src={user.avatar} alt="avatar"/>    
-          </div>
+          <Link to={`/users/${user.id}`}>
+            <div key={user.id}>
+              <p>{user.first_name} {user.last_name}</p>
+              <p>{user.email}</p>
+              <img src={user.avatar} alt="avatar"/>    
+            </div>
+          </Link>
         ))}
       </div>
       <div>

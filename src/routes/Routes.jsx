@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import UserList from '../pages/UserList'
+import UserDetail from '../pages/UserDetail'
 
 const RoutesApp = () => {
     return(
@@ -7,7 +8,8 @@ const RoutesApp = () => {
         <Router>
             <Routes>
                 <Route path='/' element={<UserList />} />
-            </Routes>
+                <Route path='users/:id' element={<UserDetail />} />
+            </Routes>    
         </Router>   
     )
 }
