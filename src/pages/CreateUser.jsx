@@ -1,0 +1,82 @@
+import { useState } from "react"
+import axios from "axios"
+
+const CreateUser = () => {
+    const [name,setName] = useState('')
+    const [lastname,setLastname] = useState('')
+    const [email,setEmail] = useState('')
+    const [job,setJob] = useState('')
+    const [message,setMessage] = useState('')
+
+    const createUser = async () => {
+        try {
+          const body = {
+            Name: name,
+            Lastname: lastname,
+            Email: email,
+            Position: job,
+          };
+    
+          const createResponse = await axios.post(
+            "https://reqres.in/api/users/",
+            body,
+            {
+              headers: {
+                "x-api-key": "reqres-free-v1",
+              },
+            }
+          );
+          setMessage('Usuario creado correctamente!');
+          setName('')
+          setLastname('')
+          setEmail('')
+          setJob('')
+        } catch (error) {
+          console.error(error.message);
+          setMessage('Error al crear el usuario');
+        }
+      };
+       
+
+    const handleSubmit = (event) =>{
+        event.preventDefault()
+       }
+    
+    return(
+        <>
+            <form onSubmit={handleSubmit}>
+                <div>
+                    
+                    <input
+                        placeholder="Enter your name"
+                        value={name}
+                        onChange={(event) => setName(event.target.value)}
+
+                    />
+                    <input
+                        placeholder="Enter your lastname"
+                        value={lastname}
+                        onChange={(event) => setLastname(event.target.value)}
+                    />
+                    <input
+                        placeholder="Enter your email"
+                        value={email}
+                        onChange={(event) => setEmail(event.target.value)}
+                    />
+                    <input
+                        placeholder="Enter your position"
+                        value={job}
+                        onChange={(event) => setJob(event.target.value)}
+                        
+                    />
+                    <button type='button' onClick={createUser}>Create user</button>
+                </div>
+            </form>
+
+            {message && <p>{message}</p>}
+        </>
+        )
+    }
+
+
+export default CreateUser

@@ -1,10 +1,12 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 
 const UserList = () => {
   const [user, setUser] = useState([]);
   const [page, setPage] = useState(1);
+  
+  const navigate = useNavigate()
 
   const fetchUsers = async (pageNumber) => {
     try {
@@ -14,7 +16,7 @@ const UserList = () => {
           'x-api-key': 'reqres-free-v1'
         }
         });
-      console.log(response)
+      
       
       setUser(response.data.data);
     } catch (error) {
@@ -25,6 +27,10 @@ const UserList = () => {
   useEffect(() => {
     fetchUsers(page);
   }, [page]);
+
+  const handleClick = () => {
+    navigate('/users/new')
+  }
 
   return (
     <section>
@@ -41,6 +47,7 @@ const UserList = () => {
         ))}
       </div>
       <div>
+        <button onClick={handleClick}>Crear usuario</button>
         <button onClick={() => setPage(p => Math.max(p - 1, 1))} disabled={page === 1}>
           Previous
         </button>
