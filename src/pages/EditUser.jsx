@@ -46,7 +46,7 @@ const EditUser = () => {
     const handleSubmit = (event) =>{
         event.preventDefault()
         handleUpdateUser()
-       }
+       }   
 
 
     return (
@@ -75,6 +75,7 @@ const EditUser = () => {
         />
         <button><Link to={'/'}>Volver</Link></button>
         <button type='submit' onClick={handleUpdateUser}>Editar</button>
+        
      </form>
     {message && <p>{message}</p>}
         

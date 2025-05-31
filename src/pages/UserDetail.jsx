@@ -21,11 +21,26 @@ const UserDetail = () => {
         fetchUser()
       }, [id])
       
-      const handleClick = () => {
+    const handleClick = () => {
         navigate('/users/:id/edit')
     }
 
-    return(
+    const handleDeleteUser = async () => {
+      try {
+          const response = await axios.delete(`https://reqres.in/api/users/${id}`, {
+              headers: {
+                  'x-api-key': 'reqres-free-v1'
+                }
+          })
+          navigate('/')
+          
+          
+      } catch (error) {
+          console.error(error.message)
+      }
+  }
+   
+  return(
         <>
             <div key={user.id}>
               <p>{user.first_name} {user.last_name}</p>
@@ -33,6 +48,7 @@ const UserDetail = () => {
               <img src={user.avatar} alt="avatar"/>    
             </div>
             <button onClick={handleClick}>editar</button>
+            <button type='button' onClick={handleDeleteUser}>Eliminar</button>
         </>
     )
 }
