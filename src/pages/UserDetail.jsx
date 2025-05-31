@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom"
+import { useParams,useNavigate } from "react-router-dom"
+
 
 
 const UserDetail = () => {
     const [user,setUser] = useState('')
     const {id} = useParams();
+    const navigate = useNavigate()
 
     useEffect(() => {
         const fetchUser = async () => {
@@ -19,7 +21,9 @@ const UserDetail = () => {
         fetchUser()
       }, [id])
       
-    
+      const handleClick = () => {
+        navigate('/users/:id/edit')
+    }
 
     return(
         <>
@@ -28,6 +32,7 @@ const UserDetail = () => {
               <p>{user.email}</p>
               <img src={user.avatar} alt="avatar"/>    
             </div>
+            <button onClick={handleClick}>editar</button>
         </>
     )
 }

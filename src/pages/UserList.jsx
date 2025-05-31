@@ -37,8 +37,8 @@ const UserList = () => {
       <h1>Users (Page {page})</h1>
       <div>
         {user.map(user => (
-          <Link to={`/users/${user.id}`}>
-            <div key={user.id}>
+          <Link to={`/users/${user.id}`} key={user.id}>
+            <div>
               <p>{user.first_name} {user.last_name}</p>
               <p>{user.email}</p>
               <img src={user.avatar} alt="avatar"/>    

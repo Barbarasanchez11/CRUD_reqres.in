@@ -1,5 +1,6 @@
 import { useState } from "react"
 import axios from "axios"
+import { Link } from "react-router-dom"
 
 const CreateUser = () => {
     const [name,setName] = useState('')
@@ -26,6 +27,7 @@ const CreateUser = () => {
               },
             }
           );
+          
           setMessage('Usuario creado correctamente!');
           setName('')
           setLastname('')
@@ -69,6 +71,7 @@ const CreateUser = () => {
                         onChange={(event) => setJob(event.target.value)}
                         
                     />
+                    <button><Link to={'/'}>Volver</Link></button>
                     <button type='button' onClick={createUser}>Create user</button>
                 </div>
             </form>
