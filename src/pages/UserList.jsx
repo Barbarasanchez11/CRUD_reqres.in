@@ -31,19 +31,23 @@ const UserList = () => {
   const handleClick = () => {
     navigate('/users/new')
   }
+ 
+  
 
   return (
     <section>
       <h1>Users (Page {page})</h1>
       <div>
         {user.map(user => (
-          <Link to={`/users/${user.id}`} key={user.id}>
+          
             <div>
+              
               <p>{user.first_name} {user.last_name}</p>
               <p>{user.email}</p>
+              <Link to={`/users/${user.id}`} key={user.id}>
               <img src={user.avatar} alt="avatar"/>    
+              </Link>
             </div>
-          </Link>
         ))}
       </div>
       <div>

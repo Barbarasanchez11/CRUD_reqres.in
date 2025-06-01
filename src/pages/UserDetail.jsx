@@ -38,7 +38,7 @@ const UserDetail = () => {
       } catch (error) {
           console.error(error.message)
       }
-  }
+ }
    
   return(
         <>
