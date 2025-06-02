@@ -1,0 +1,38 @@
+.userlist-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.userlist-buttons button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.userlist-buttons button:first-child {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.userlist-buttons button:first-child:hover {
+  background-color: #45a049;
+}
+
+.userlist-buttons button:not(:first-child) {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.userlist-buttons button:not(:first-child):hover {
+  background-color: #e0e0e0;
+}
+
+.userlist-buttons button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}

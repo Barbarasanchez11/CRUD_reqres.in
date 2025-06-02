@@ -1,0 +1,23 @@
+.input {
+  padding: 10px 15px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 300px;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #646cff;
+  box-shadow: 0 0 5px rgba(100, 108, 255, 0.3);
+}
+
+.input::placeholder {
+  color: #999;
+}
+
+.input:hover {
+  border-color: #646cff;
+}

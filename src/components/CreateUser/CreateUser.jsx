@@ -72,7 +72,7 @@ const CreateUser = () => {
                         onChange={(event) => setJob(event.target.value)}
                         
                     />
-                    <button><Link to={'/'}>Volver</Link></button>
+                    <Button onClick={() => navigate('/')} label="Volver" type="button" />
                     <Button onClick={createUser} label="Crear usuario" type='submit'/>
                   
                 

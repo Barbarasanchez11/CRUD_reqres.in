@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './Input.css';
 
 const Input = ({ placeholder, value, onChange, className = "", type = "text" }) => {
   return (
@@ -8,7 +8,7 @@ const Input = ({ placeholder, value, onChange, className = "", type = "text" }) 
       placeholder={placeholder}
       value={value}
       onChange={onChange}
-      className={className}
+      className={`input ${className}`}
     />
   );
 };

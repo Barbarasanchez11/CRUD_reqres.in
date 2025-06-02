@@ -1,3 +1,4 @@
+import './UserListButton.css';
 
 const UserListButtons = ({ onCreateUser, onPreviousPage, onNextPage, isFirstPage }) => {
     return (
