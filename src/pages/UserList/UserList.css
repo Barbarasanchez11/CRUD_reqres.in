@@ -1,0 +1,42 @@
+@media (min-width: 768px) {
+
+    .userlist-main{
+        height: 100vh;
+        width: fit-content;
+        display: flex;
+        align-items: center;
+    }
+    .userlist-section{
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+    }
+    .userlist-title{
+        font-size: 30px;
+    }
+    .userlist-users-container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    .userlist-name{
+       font-size: 20px;
+    }
+    .userlist-email{
+        font-family: 16px;
+    }
+    .userlist-avatar{
+        cursor: pointer;
+    }
+    .userlist-buttons{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 20px;
+    }
+}

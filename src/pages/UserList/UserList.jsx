@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link,useNavigate } from "react-router-dom";
+import './UserList.css'
 
 const UserList = () => {
   const [user, setUser] = useState([]);
@@ -35,22 +36,23 @@ const UserList = () => {
   
 
   return (
-    <section>
-      <h1>Users (Page {page})</h1>
-      <div>
+    <main className="userlist-main">
+     <section className="userlist-section">
+      <h1 className="userlist-title">Users (Page {page})</h1>
+      <div className="userlist-users-container">
         {user.map(user => (
           
-            <div>
+            <div className="userlist-user" key={user.id}>
               
-              <p>{user.first_name} {user.last_name}</p>
-              <p>{user.email}</p>
-              <Link to={`/users/${user.id}`} key={user.id}>
-              <img src={user.avatar} alt="avatar"/>    
+              <p className="userlist-name">{user.first_name} {user.last_name}</p>
+              <p className="userlist-email">{user.email}</p>
+              <Link to={`/users/${user.id}`}>
+              <img src={user.avatar} alt="avatar" className="userlist-avatar"/>    
               </Link>
             </div>
         ))}
       </div>
-      <div>
+      <div className="userlist-buttons">
         <button onClick={handleClick}>Crear usuario</button>
         <button onClick={() => setPage(p => Math.max(p - 1, 1))} disabled={page === 1}>
           Previous
@@ -60,6 +62,7 @@ const UserList = () => {
         </button>
       </div>
     </section>
+   </main> 
   );
 };
 
