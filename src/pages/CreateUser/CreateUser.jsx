@@ -1,6 +1,7 @@
 import { useState } from "react"
 import axios from "axios"
 import { Link } from "react-router-dom"
+import './createUser.css'
 
 const CreateUser = () => {
     const [name,setName] = useState('')
@@ -45,10 +46,8 @@ const CreateUser = () => {
        }
     
     return(
-        <>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    
+        <main className="createuser-main">
+            <form onSubmit={handleSubmit} className="createuser-form"> 
                     <input
                         placeholder="Enter your name"
                         value={name}
@@ -73,11 +72,11 @@ const CreateUser = () => {
                     />
                     <button><Link to={'/'}>Volver</Link></button>
                     <button type='button' onClick={createUser}>Create user</button>
-                </div>
+                
             </form>
 
             {message && <p>{message}</p>}
-        </>
+        </main>
         )
     }
 
