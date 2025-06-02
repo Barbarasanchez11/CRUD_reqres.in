@@ -3,6 +3,7 @@ import axios from "axios"
 import { Link } from "react-router-dom"
 import './createUser.css'
 import Button from '../Buttons/Button'
+import Input from '../Inputs/Input'
 
 const CreateUser = () => {
     const [name,setName] = useState('')
@@ -49,23 +50,23 @@ const CreateUser = () => {
     return(
         <main className="createuser-main">
             <form onSubmit={handleSubmit} className="createuser-form"> 
-                    <input
+                    <Input
                         placeholder="Enter your name"
                         value={name}
                         onChange={(event) => setName(event.target.value)}
 
                     />
-                    <input
+                    <Input
                         placeholder="Enter your lastname"
                         value={lastname}
                         onChange={(event) => setLastname(event.target.value)}
                     />
-                    <input
+                    <Input
                         placeholder="Enter your email"
                         value={email}
                         onChange={(event) => setEmail(event.target.value)}
                     />
-                    <input
+                    <Input
                         placeholder="Enter your position"
                         value={job}
                         onChange={(event) => setJob(event.target.value)}

@@ -2,7 +2,8 @@ import { useState } from "react"
 import axios from "axios"
 import { useParams,Link  } from "react-router-dom"
 import './editUser.css'
-import Button from "../Buttons/SubmitButton"
+import Button from "../Buttons/Button"
+import Input from "../Inputs/Input"
 
 
 const EditUser = () => {
@@ -54,27 +55,27 @@ const EditUser = () => {
     return (
     <main className="edituser-main">
      <form onSubmit={handleSubmit} className="edituser-form">
-        <input
+        <Input 
             placeholder="Enter your name"
             value={name}
-            onChange={(event) => setName(event.target.value)}
-         />
-        <input
-            placeholder="Enter your lastname"
-            value={lastname}
-            onChange={(event) => setLastname(event.target.value)}
+            onChange={e => setName(e.target.value)} 
         />
-        <input
-            placeholder="Enter your email"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
+        <Input 
+            placeholder="Enter your lastname" 
+            value={lastname} 
+            onChange={e => setLastname(e.target.value)} 
         />
-        <input
-            placeholder="Enter your position"
-            value={job}
-            onChange={(event) => setJob(event.target.value)}
-                        
+        <Input 
+            placeholder="Enter your email" 
+            value={email} 
+            onChange={e => setEmail(e.target.value)} 
         />
+        <Input 
+            placeholder="Enter your position" 
+            value={job} 
+            onChange={e => setJob(e.target.value)} 
+        />
+        
         <button><Link to={'/'}>Volver</Link></button>
         <Button onClick={handleUpdateUser} label="Editar" type='button'/>
         

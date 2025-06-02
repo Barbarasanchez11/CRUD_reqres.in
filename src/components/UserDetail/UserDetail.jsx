@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams,useNavigate } from "react-router-dom"
 import './userDetail.css'
-import Button from "../Buttons/SubmitButton";
+import Button from "../Buttons/Button";
 
 
 
