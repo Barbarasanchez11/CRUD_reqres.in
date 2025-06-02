@@ -2,6 +2,7 @@ import { useState } from "react"
 import axios from "axios"
 import { Link } from "react-router-dom"
 import './createUser.css'
+import Button from '../Buttons/Button'
 
 const CreateUser = () => {
     const [name,setName] = useState('')
@@ -71,7 +72,8 @@ const CreateUser = () => {
                         
                     />
                     <button><Link to={'/'}>Volver</Link></button>
-                    <button type='button' onClick={createUser}>Create user</button>
+                    <Button onClick={createUser} label="Crear usuario" type='submit'/>
+                  
                 
             </form>
 

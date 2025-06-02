@@ -2,6 +2,7 @@ import { useState } from "react"
 import axios from "axios"
 import { useParams,Link  } from "react-router-dom"
 import './editUser.css'
+import Button from "../Buttons/SubmitButton"
 
 
 const EditUser = () => {
@@ -75,7 +76,7 @@ const EditUser = () => {
                         
         />
         <button><Link to={'/'}>Volver</Link></button>
-        <button type='submit' onClick={handleUpdateUser}>Editar</button>
+        <Button onClick={handleUpdateUser} label="Editar" type='button'/>
         
      </form>
     {message && <p>{message}</p>}

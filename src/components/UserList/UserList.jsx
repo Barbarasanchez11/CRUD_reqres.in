@@ -41,10 +41,8 @@ const UserList = () => {
      <section className="userlist-section">
       <h1 className="userlist-title">Users (Page {page})</h1>
       <div className="userlist-users-container">
-        {user.map(user => (
-          
-            <div className="userlist-user" key={user.id}>
-              
+        {user.map(user => ( 
+            <div className="userlist-user" key={user.id}> 
               <p className="userlist-name">{user.first_name} {user.last_name}</p>
               <p className="userlist-email">{user.email}</p>
               <Link to={`/users/${user.id}`}>

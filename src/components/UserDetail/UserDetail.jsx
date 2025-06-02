@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams,useNavigate } from "react-router-dom"
 import './userDetail.css'
+import Button from "../Buttons/SubmitButton";
 
 
 
@@ -48,8 +49,10 @@ const UserDetail = () => {
               <p className="userdetail-email">{user.email}</p>
               <img src={user.avatar} alt="avatar" className="userdetail-avatar"/>    
             </div>
-            <button onClick={handleClick}>editar</button>
-            <button type='button' onClick={handleDeleteUser}>Eliminar</button>
+           
+            <Button onClick={handleClick} label="Editar" type='button'/>
+            <Button onClick={handleDeleteUser} label="Eliminar" type='button' />
+            
         </main>
     )
 }
