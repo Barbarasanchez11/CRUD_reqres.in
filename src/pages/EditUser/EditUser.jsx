@@ -1,6 +1,7 @@
 import { useState } from "react"
 import axios from "axios"
 import { useParams,Link  } from "react-router-dom"
+import './editUser.css'
 
 
 const EditUser = () => {
@@ -50,8 +51,8 @@ const EditUser = () => {
 
 
     return (
-    <>
-     <form onSubmit={handleSubmit}>
+    <main className="edituser-main">
+     <form onSubmit={handleSubmit} className="edituser-form">
         <input
             placeholder="Enter your name"
             value={name}
@@ -79,7 +80,7 @@ const EditUser = () => {
      </form>
     {message && <p>{message}</p>}
         
-    </>
+    </main>
     )
 }
 export default EditUser
