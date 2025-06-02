@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams,useNavigate } from "react-router-dom"
+import './userDetail.css'
 
 
 
@@ -41,15 +42,15 @@ const UserDetail = () => {
  }
    
   return(
-        <>
-            <div key={user.id}>
-              <p>{user.first_name} {user.last_name}</p>
-              <p>{user.email}</p>
-              <img src={user.avatar} alt="avatar"/>    
+        <main className="userdetail-main">
+            <div key={user.id} className="userdetail-user">
+              <p className="userdetail-name">{user.first_name} {user.last_name}</p>
+              <p className="userdetail-email">{user.email}</p>
+              <img src={user.avatar} alt="avatar" className="userdetail-avatar"/>    
             </div>
             <button onClick={handleClick}>editar</button>
             <button type='button' onClick={handleDeleteUser}>Eliminar</button>
-        </>
+        </main>
     )
 }
 
