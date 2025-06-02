@@ -1,5 +1,6 @@
 import RoutesApp from './routes/Routes'
-import './App.css'
+import './styles/reset.css';
+
 
 const App = () => {
   return(
