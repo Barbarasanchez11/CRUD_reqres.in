@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link,useNavigate } from "react-router-dom";
 import './userList.css'
+import UserListButtons from "../Buttons/UserListButton";
 
 const UserList = () => {
   const [user, setUser] = useState([]);
@@ -52,15 +53,12 @@ const UserList = () => {
             </div>
         ))}
       </div>
-      <div className="userlist-buttons">
-        <button onClick={handleClick}>Crear usuario</button>
-        <button onClick={() => setPage(p => Math.max(p - 1, 1))} disabled={page === 1}>
-          Previous
-        </button>
-        <button onClick={() => setPage(p => p + 1)}>
-          Next
-        </button>
-      </div>
+      <UserListButtons
+        onCreateUser={handleClick}
+        onPreviousPage={() => setPage(p => Math.max(p - 1, 1))}
+        onNextPage={() => setPage(p => p + 1)}
+        isFirstPage={page === 1}
+      />
     </section>
    </main> 
   );
