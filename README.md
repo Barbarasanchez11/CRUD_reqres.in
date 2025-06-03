@@ -56,3 +56,11 @@ http://localhost:5173
 **Licencia**
 Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
 
+<!-- 
+
+Componentes -> Componentes -> Button, Input, RadioButton
+Views -> UserList, UserDetail
+services -> las llamadas a las APIs
+
+
+-->

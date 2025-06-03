@@ -1,12 +1,15 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link,useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import './userList.css'
-import UserListButtons from "../Buttons/UserListButton";
+import UserListButton from "../UserListButton/UserListButton";
+import UserCard from "../UserCard/UserCard";
+
+const FIRST_LOAD_PAGE = 1
 
 const UserList = () => {
   const [user, setUser] = useState([]);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(FIRST_LOAD_PAGE);
   
   const navigate = useNavigate()
 
@@ -18,8 +21,7 @@ const UserList = () => {
           'x-api-key': 'reqres-free-v1'
         }
         });
-      
-      
+       
       setUser(response.data.data);
     } catch (error) {
       console.error('Error fetching users:', error);
@@ -41,20 +43,12 @@ const UserList = () => {
      <section className="userlist-section">
       <h1 className="userlist-title">Users (Page {page})</h1>
       <div className="userlist-users-container">
-        {user.map(user => ( 
-            <div className="userlist-user" key={user.id}> 
-              <p className="userlist-name">{user.first_name} {user.last_name}</p>
-              <p className="userlist-email">{user.email}</p>
-              <Link to={`/users/${user.id}`}>
-              <img src={user.avatar} alt="avatar" className="userlist-avatar"/>    
-              </Link>
-            </div>
-        ))}
+       <UserCard user={user}/>
       </div>
-      <UserListButtons
+      <UserListButton
         onCreateUser={handleClick}
-        onPreviousPage={() => setPage(p => Math.max(p - 1, 1))}
-        onNextPage={() => setPage(p => p + 1)}
+        onPreviousPage={() => setPage(page => Math.max(page - 1, 1))}
+        onNextPage={() => setPage(page => page + 1)}
         isFirstPage={page === 1}
       />
     </section>

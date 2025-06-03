@@ -2,7 +2,7 @@ import { useState } from "react"
 import axios from "axios"
 import { useParams,Link  } from "react-router-dom"
 import './editUser.css'
-import Button from "../Buttons/Button"
+import Button from "../Button/Button"
 import Input from "../Inputs/Input"
 
 
@@ -10,6 +10,8 @@ const EditUser = () => {
     const [isEditing,setIsEditing] = useState('')
     const {id} = useParams()
 
+
+    // SE BORRAN AL TERMINAR 
     console.log(isEditing)
    
     const [name,setName] = useState('')

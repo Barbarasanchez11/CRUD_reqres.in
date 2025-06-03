@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams,useNavigate } from "react-router-dom"
 import './userDetail.css'
-import Button from "../Buttons/Button";
+import Button from "../Button/Button";
 
 
 
@@ -18,6 +18,7 @@ const UserDetail = () => {
               'x-api-key': 'reqres-free-v1'
             }
           })
+          // user.first_name
           setUser(response.data.data)  
         }
         fetchUser()
@@ -29,6 +30,7 @@ const UserDetail = () => {
 
     const handleDeleteUser = async () => {
       try {
+        // Si response no se usa, no se declara
           const response = await axios.delete(`https://reqres.in/api/users/${id}`, {
               headers: {
                   'x-api-key': 'reqres-free-v1'

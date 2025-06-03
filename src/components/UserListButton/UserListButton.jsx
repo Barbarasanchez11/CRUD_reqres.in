@@ -1,6 +1,10 @@
 import './UserListButton.css';
 
-const UserListButtons = ({ onCreateUser, onPreviousPage, onNextPage, isFirstPage }) => {
+// Sacarlo a otro sitio
+// Estos botones deberian de usar el componente Button
+// https://github.com/ryanmcdermott/clean-code-javascript
+
+const UserListButton = ({ onCreateUser, onPreviousPage, onNextPage, isFirstPage }) => {
     return (
       <div className="userlist-buttons">
         <button onClick={onCreateUser}>Crear usuario</button>
@@ -14,5 +18,5 @@ const UserListButtons = ({ onCreateUser, onPreviousPage, onNextPage, isFirstPage
     );
   };
   
-  export default UserListButtons;
+  export default UserListButton;
   

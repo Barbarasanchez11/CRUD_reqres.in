@@ -1,3 +1,7 @@
+/* Mobile first */
+
+
+/* Usamos los media queries para el resto de resoluciones */
 @media (min-width: 768px) {
 
     .userlist-main{

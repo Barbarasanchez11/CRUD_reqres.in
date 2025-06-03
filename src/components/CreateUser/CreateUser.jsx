@@ -2,7 +2,7 @@ import { useState } from "react"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
 import './createUser.css'
-import Button from '../Buttons/Button'
+import Button from '../Button/Button'
 import Input from '../Inputs/Input'
 
 const CreateUser = () => {
@@ -15,10 +15,14 @@ const CreateUser = () => {
     const navigate = useNavigate();
 
     const validate = () => {
+
+        // Los comentarios no son necesarios PORQUE el codigo tiene que ser AUTOEXPLICATIVO
+        // Evitamos en la medida de lo posible if-else-if
         const newErrors = {};
         // Validación nombre
         if (!name.trim()) {
-            newErrors.name = 'El nombre es obligatorio.';
+            const messageNameEmpty = 'El nombre es obligatorio.'
+            newErrors.name = messageNameEmpty;
         } else if (!/^[A-Za-zÁÉÍÓÚáéíóúÑñ ]{2,30}$/.test(name)) {
             newErrors.name = 'El nombre solo puede contener letras y espacios (2-30 caracteres).';
         }
@@ -29,6 +33,8 @@ const CreateUser = () => {
             newErrors.lastname = 'El apellido solo puede contener letras y espacios (2-30 caracteres).';
         }
         // Validación empleo
+        // const minJobLength = 2
+        // const maxJoblength = 30
         if (!job.trim()) {
             newErrors.job = 'El empleo es obligatorio.';
         } else if (job.length < 2 || job.length > 30) {
@@ -43,6 +49,10 @@ const CreateUser = () => {
             newErrors.email = 'El email debe ser válido (ejemplo@dominio.com).';
         }
         return newErrors;
+    }
+
+    const clearForm = () => {
+        
     }
 
     const createUser = async () => {
@@ -63,11 +73,14 @@ const CreateUser = () => {
                 }
             );
             setMessage('Usuario creado correctamente!');
+
+            // ClearForm // resetForm // Me lo llevo a una funcion
             setName('');
             setLastname('');
             setEmail('');
             setJob('');
             setErrors({});
+            
         } catch (error) {
             console.error(error.message);
             setMessage('Error al crear el usuario');
@@ -87,10 +100,12 @@ const CreateUser = () => {
     return (
         <main className="createuser-main">
             <form onSubmit={handleSubmit} className="createuser-form">
+                {/* Parte del input, el container y la gestion de errores */}
                 <div className="input-container">
                     <Input
                         placeholder="Enter your name"
                         value={name}
+                        // e --> ?
                         onChange={e => setName(e.target.value)}
                     />
                     {errors.name && <p className="input-error">{errors.name}</p>}
