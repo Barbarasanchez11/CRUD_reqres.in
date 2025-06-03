@@ -32,7 +32,7 @@ const EditUser = () => {
                     'x-api-key': 'reqres-free-v1'
                   }
             })
-            console.log(response)
+            
             setIsEditing(response)
             setMessage('Usuario actualizado correctamente');
             setName('')
