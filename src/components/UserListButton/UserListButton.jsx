@@ -7,7 +7,7 @@ import './UserListButton.css';
 const UserListButton = ({ onCreateUser, onPreviousPage, onNextPage, isFirstPage }) => {
     return (
       <div className="userlist-buttons">
-        <button onClick={onCreateUser}>Crear usuario</button>
+        <button onClick={onCreateUser}>Create user</button>
         <button onClick={onPreviousPage} disabled={isFirstPage}>
           Previous
         </button>

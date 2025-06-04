@@ -9,7 +9,7 @@ const HEADERS = {
 const getUsers = async (pageNumber) => {
   const response = await axios.get(`${API_BASE_URL}/users?page=${pageNumber}`, {
     headers: HEADERS,
-  });
+  }); 
   return response.data;
 };
 
