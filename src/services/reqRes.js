@@ -13,13 +13,20 @@ const getUsers = async (pageNumber) => {
   return response.data;
 };
 
+const getUser = async (id) => {
+  const response = await axios.get(`${API_BASE_URL}/users/${id}`, {
+    headers: HEADERS,
+  });
+  return response.data;
+};
+
 
 const createUser = async ({ name, lastname, email, job }) => {
   const body = {
-    Name: name,
-    Lastname: lastname,
-    Email: email,
-    Position: job,
+    name: name,
+    lastname: lastname,
+    email: email,
+    position: job,
   };
 
   const response = await axios.post(`${API_BASE_URL}/users`, body, {
@@ -31,10 +38,10 @@ const createUser = async ({ name, lastname, email, job }) => {
 
 const updateUser = async (id, { name, lastname, email, job }) => {
     const body = {
-      Name: name,
-      Lastname: lastname,
-      Email: email,
-      Position: job,
+      name: name,
+      lastname: lastname,
+      email: email,
+      position: job,
     };
   
     const response = await axios.put(`${API_BASE_URL}/users/${id}`, body, {
@@ -51,4 +58,4 @@ const updateUser = async (id, { name, lastname, email, job }) => {
   });
 };
 
-export default {getUsers,createUser,deleteUser,updateUser}
+export default {getUsers,getUser,createUser,deleteUser,updateUser}
