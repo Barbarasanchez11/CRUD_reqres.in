@@ -11,7 +11,6 @@ const CreateUser = () => {
     const [email, setEmail] = useState('')
     const [job, setJob] = useState('')
     const [message, setMessage] = useState('')
-    const [errors, setErrors] = useState({})
     const navigate = useNavigate();
 
     const clearForm = () => {
@@ -19,7 +18,6 @@ const CreateUser = () => {
      setLastname('');
      setEmail('');
      setJob('');
-     setErrors({});
     }
 
     const handleSubmit = async (event) => {
