@@ -10,10 +10,6 @@ const EditUser = () => {
     const [isEditing,setIsEditing] = useState('')
     const {id} = useParams()
 
-
-    // SE BORRAN AL TERMINAR 
-    console.log(isEditing)
-   
     const [name,setName] = useState('')
     const [lastname,setLastname] = useState('')
     const [email,setEmail] = useState('')
@@ -60,25 +56,24 @@ const EditUser = () => {
         <Input 
             placeholder="Enter your name"
             value={name}
-            onChange={e => setName(e.target.value)} 
+            onChange={event => setName(event.target.value)} 
         />
         <Input 
             placeholder="Enter your lastname" 
             value={lastname} 
-            onChange={e => setLastname(e.target.value)} 
+            onChange={event => setLastname(event.target.value)} 
         />
         <Input 
             placeholder="Enter your email" 
             value={email} 
-            onChange={e => setEmail(e.target.value)} 
+            onChange={event => setEmail(event.target.value)} 
         />
         <Input 
             placeholder="Enter your position" 
             value={job} 
-            onChange={e => setJob(e.target.value)} 
+            onChange={event => setJob(event.target.value)} 
         />
-        
-        <button><Link to={'/'}>Volver</Link></button>
+        <Button label='Volver' type='button' /><Link to={'/'}>Volver</Link>
         <Button onClick={handleUpdateUser} label="Editar" type='button'/>
         
      </form>
