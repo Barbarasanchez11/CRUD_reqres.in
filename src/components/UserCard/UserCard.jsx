@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import userData from "../../services/userData";
 import './UserCard.css'
 
 const UserCard = ({user}) => {
@@ -6,7 +7,7 @@ const UserCard = ({user}) => {
         <>
         {user.map(user => ( 
               <div className="userlist-user" key={user.id}> 
-                <p className="userlist-name">{user.first_name} {user.last_name}</p>
+                <p className="userlist-name">{user.firstName} {user.lastName}</p>
                 <p className="userlist-email">{user.email}</p>
                 <Link to={`/users/${user.id}`}>
                  <img src={user.avatar} alt="avatar" className="userlist-avatar"/>    
