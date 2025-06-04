@@ -3,7 +3,7 @@ import axios from "axios"
 import { useNavigate } from "react-router-dom"
 import './createUser.css'
 import Button from '../Button/Button'
-import Input from '../Inputs/Input'
+import Input from '../Input/Input'
 
 const CreateUser = () => {
     const [name, setName] = useState('')
@@ -103,39 +103,33 @@ const CreateUser = () => {
                     <Input
                         placeholder="Enter your name"
                         value={name}
-                        // e --> ?
-                        onChange={e => setName(e.target.value)}
+                        onChange={event => setName(event.target.value)}
+                        error={errors.name}
                     />
-                    {errors.name && <p className="input-error">{errors.name}</p>}
-                </div>
-                <div className="input-container">
                     <Input
                         placeholder="Enter your lastname"
                         value={lastname}
-                        onChange={e => setLastname(e.target.value)}
+                        onChange={event => setLastname(event.target.value)}
+                        error={errors.lastname}
                     />
-                    {errors.lastname && <p className="input-error">{errors.lastname}</p>}
-                </div>
-                <div className="input-container">
                     <Input
                         placeholder="Enter your email"
                         value={email}
-                        onChange={e => setEmail(e.target.value)}
+                        onChange={event => setEmail(event.target.value)}
+                        error={errors.email}
                     />
-                    {errors.email && <p className="input-error">{errors.email}</p>}
-                </div>
-                <div className="input-container">
                     <Input
                         placeholder="Enter your position"
                         value={job}
-                        onChange={e => setJob(e.target.value)}
+                        onChange={event => setJob(event.target.value)}
+                        error={errors.job}
                     />
-                    {errors.job && <p className="input-error">{errors.job}</p>}
+                    
                 </div>
                 <Button label="Crear usuario" type='submit' />
                 <Button onClick={() => navigate('/')} label="Volver" type="button" />
             </form>
-            {message && <p>{message}</p>}
+            {message && <p className="message-createuser">{message}</p>}
         </main>
     )
 }

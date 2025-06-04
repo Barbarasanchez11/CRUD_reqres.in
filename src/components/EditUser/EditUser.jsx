@@ -3,7 +3,7 @@ import axios from "axios"
 import { useParams,Link  } from "react-router-dom"
 import './editUser.css'
 import Button from "../Button/Button"
-import Input from "../Inputs/Input"
+import Input from "../Input/Input"
 
 
 const EditUser = () => {

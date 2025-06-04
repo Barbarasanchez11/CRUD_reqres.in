@@ -19,11 +19,19 @@
 .input-container {
   width: 100%;
   max-width: 320px;
+  margin-bottom: 10PX;
 }
-
+.input-container input{
+  margin-bottom: 10px;
+}
 .input-error {
   color: red;
   margin: 0;
   font-size: 14px;
   text-align: left;
+}
+
+.message-createuser{
+  color: red;
+  margin-bottom: 10px;
 }
