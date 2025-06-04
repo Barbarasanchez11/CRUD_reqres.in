@@ -76,7 +76,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
-    max-width: 700px;
+    max-width: 740px;
     gap: 0;
   }
   .create-user-btn {

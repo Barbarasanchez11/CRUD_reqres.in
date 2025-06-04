@@ -47,6 +47,7 @@ const UserDetail = () => {
             </div>
             <Button onClick={handleClick} label="edit" type='button'/>
             <Button onClick={handleDeleteUser} label="delete" type='button' />
+            <Button label='back' type='button' onClick={() => navigate('/')} />
             
         </main>
     )
