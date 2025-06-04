@@ -38,18 +38,22 @@ const UserList = () => {
       <div className="userlist-users-container">
        <UserCard user={user}/>
       </div>
-      <div className="userlist-buttons">
-          <Button onClick={handleClick} label="Create user" />
+      <div className="userlist-actions">
+        <Button onClick={handleClick} label="Create user" className="create-user-btn" />
+        <div className="userlist-pagination">
           <Button 
             onClick={() => setPage(page => Math.max(page - 1, 1))} 
             label="Previous" 
             disabled={page === 1} 
+            className="pagination-btn"
           />
           <Button 
             onClick={() => setPage(page => page + 1)} 
             label="Next" 
+            className="pagination-btn"
           />
         </div>
+      </div>
     </section>
    </main> 
   );
