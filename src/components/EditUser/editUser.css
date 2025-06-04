@@ -15,3 +15,8 @@
     width: 100%;
     gap: 20px;
 }
+
+.message-updateuser{
+  color: red;
+  margin-bottom: 10px;
+}

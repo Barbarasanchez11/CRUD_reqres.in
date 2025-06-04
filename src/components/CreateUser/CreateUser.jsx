@@ -72,8 +72,8 @@ const CreateUser = () => {
                     />
                     
                 </div>
-                <Button label="Crear usuario" type='submit' />
-                <Button onClick={() => navigate('/')} label="Volver" type="button" />
+                <Button label="Create user" type='submit' />
+                <Button onClick={() => navigate('/')} label="back" type="button" />
             </form>
             {message && <p className="message-createuser">{message}</p>}
         </main>

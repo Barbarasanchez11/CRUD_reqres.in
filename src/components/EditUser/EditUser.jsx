@@ -1,54 +1,47 @@
 import { useState } from "react"
-import axios from "axios"
-import { useParams,Link  } from "react-router-dom"
-import './editUser.css'
+import { useParams, useNavigate  } from "react-router-dom"
+import updateUser from '../../services/reqRes'
 import Button from "../Button/Button"
 import Input from "../Input/Input"
+import './editUser.css'
 
 
 const EditUser = () => {
-    const [isEditing,setIsEditing] = useState('')
     const {id} = useParams()
+    const navigate = useNavigate()
 
     const [name,setName] = useState('')
     const [lastname,setLastname] = useState('')
     const [email,setEmail] = useState('')
     const [job,setJob] = useState('')
     const [message,setMessage] = useState('')
-
-    const handleUpdateUser = async () => {
-        try {
-            const body = {
-                Name: name,
-                Lastname: lastname,
-                Email: email,
-                Position: job,
-              };
-
-            const response = await axios.put(`https://reqres.in/api/users/${id}`,body , {
-                headers: {
-                    'x-api-key': 'reqres-free-v1'
-                  }
-            })
-            
-            setIsEditing(response)
-            setMessage('Usuario actualizado correctamente');
-            setName('')
-            setLastname('')
-            setEmail('')
-            setJob('')
-
-
-        } catch (error) {
-            console.error(error.message)
-        }
-    }
+  
+    const clearForm = () => {
+        setName('')
+        setLastname('')
+        setEmail('')
+        setJob('')
+      }
     
-    const handleSubmit = (event) =>{
+      const handleSubmit = async (event) => {
         event.preventDefault()
-        handleUpdateUser()
-       }   
-
+    
+        const body = {
+          name,
+          lastname,
+          email,
+          position: job,
+        }
+    
+        try {
+          await updateUser.updateUser(id, body)
+          setMessage('User updated successfully!')
+          clearForm()
+        } catch (error) {
+          console.error(error.message)
+          setMessage('Error updating user')
+        }
+      }   
 
     return (
     <main className="edituser-main">
@@ -73,11 +66,11 @@ const EditUser = () => {
             value={job} 
             onChange={event => setJob(event.target.value)} 
         />
-        <Button label='Volver' type='button' /><Link to={'/'}>Volver</Link>
-        <Button onClick={handleUpdateUser} label="Editar" type='button'/>
+        <Button label="edit" type='submit'/>
+        <Button label='back' type='button' onClick={() => navigate('/')} />
         
      </form>
-    {message && <p>{message}</p>}
+     {message && <p className="message-updateuser">{message}</p>}
         
     </main>
     )
