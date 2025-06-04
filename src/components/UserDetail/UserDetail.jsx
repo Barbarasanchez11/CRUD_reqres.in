@@ -17,7 +17,6 @@ const UserDetail = () => {
         const fetchUser = async () => {
           try {
             const data = await reqRes.getUser(id);
-            console.log('esto es data',data)
             const mappedUser = userData(data.data);
             setUser(mappedUser);
             } catch (error) {
@@ -47,7 +46,6 @@ const UserDetail = () => {
               <p className="userdetail-email">{user.email}</p>
               <img src={user.avatar} alt="avatar" className="userdetail-avatar"/>    
             </div>
-           
             <Button onClick={handleClick} label="edit" type='button'/>
             <Button onClick={handleDeleteUser} label="delete" type='button' />
             
