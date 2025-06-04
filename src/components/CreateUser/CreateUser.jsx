@@ -51,8 +51,12 @@ const CreateUser = () => {
         return newErrors;
     }
 
-    const clearForm = () => {
-        
+   const clearForm = () => {
+    setName('');
+    setLastname('');
+    setEmail('');
+    setJob('');
+    setErrors({});
     }
 
     const createUser = async () => {
@@ -72,14 +76,8 @@ const CreateUser = () => {
                     },
                 }
             );
+            clearForm()
             setMessage('Usuario creado correctamente!');
-
-            // ClearForm // resetForm // Me lo llevo a una funcion
-            setName('');
-            setLastname('');
-            setEmail('');
-            setJob('');
-            setErrors({});
             
         } catch (error) {
             console.error(error.message);
