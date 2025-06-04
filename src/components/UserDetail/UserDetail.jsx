@@ -10,7 +10,6 @@ import './userDetail.css'
 const UserDetail = () => {
     const [user,setUser] = useState('')
     const {id} = useParams();
-    console.log(id)
     const navigate = useNavigate()
 
     useEffect(() => {

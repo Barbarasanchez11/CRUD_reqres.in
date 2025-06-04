@@ -1,7 +1,6 @@
-import axios from "axios";
 import { useState, useEffect } from "react";
 import {useNavigate } from "react-router-dom";
-import UserListButton from "../UserListButton/UserListButton";
+import Button from "../Button/Button";
 import UserCard from "../UserCard/UserCard";
 import getUsers from '../../services/reqRes'
 import './userList.css'
@@ -39,12 +38,18 @@ const UserList = () => {
       <div className="userlist-users-container">
        <UserCard user={user}/>
       </div>
-      <UserListButton
-        onCreateUser={handleClick}
-        onPreviousPage={() => setPage(page => Math.max(page - 1, 1))}
-        onNextPage={() => setPage(page => page + 1)}
-        isFirstPage={page === 1}
-      />
+      <div className="userlist-buttons">
+          <Button onClick={handleClick} label="Create user" />
+          <Button 
+            onClick={() => setPage(page => Math.max(page - 1, 1))} 
+            label="Previous" 
+            disabled={page === 1} 
+          />
+          <Button 
+            onClick={() => setPage(page => page + 1)} 
+            label="Next" 
+          />
+        </div>
     </section>
    </main> 
   );

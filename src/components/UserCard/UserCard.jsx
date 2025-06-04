@@ -8,7 +8,7 @@ const UserCard = ({user}) => {
                 <p className="userlist-name">{user.first_name} {user.last_name}</p>
                 <p className="userlist-email">{user.email}</p>
                 <Link to={`/users/${user.id}`}>
-                <img src={user.avatar} alt="avatar" className="userlist-avatar"/>    
+                 <img src={user.avatar} alt="avatar" className="userlist-avatar"/>    
                 </Link>
               </div>
           ))}
