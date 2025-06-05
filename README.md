@@ -13,7 +13,7 @@ cd CRUD_reqres.in
 
 2. **Instala las dependencias:**
 
-    npm install
+   npm install
 
 3. **Inicia el servidor de desarrollo:**
 
@@ -22,7 +22,6 @@ npm run dev
 4. **Abre tu navegador y accede a:**
 
 http://localhost:5173
-
 
 **Qué cosas implementaría con más tiempo**
 
@@ -42,17 +41,15 @@ http://localhost:5173
 
 ⚛️ Migración a un framework: como React, si el proyecto crece en complejidad.
 
-
 **Estructura del proyecto**
 
-├── index.html              # Página principal de la aplicación
-├── main.js                 # Lógica principal de las operaciones CRUD
-├── style.css               # Estilos básicos de la interfaz
-├── package.json            # Scripts y dependencias
-├── .prettierrc             # Reglas de formateo automático
-├── vite.config.js          # Configuración de Vite
-└── README.md               # Documentación del proyecto
+├── index.html # Página principal de la aplicación
+├── main.js # Lógica principal de las operaciones CRUD
+├── style.css # Estilos básicos de la interfaz
+├── package.json # Scripts y dependencias
+├── .prettierrc # Reglas de formateo automático
+├── vite.config.js # Configuración de Vite
+└── README.md # Documentación del proyecto
 
 **Licencia**
 Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
-

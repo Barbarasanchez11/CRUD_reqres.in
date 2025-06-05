@@ -1,6 +1,5 @@
 import axios from "axios";
 
-
 const API_BASE_URL = "https://reqres.in/api";
 const HEADERS = {
   "x-api-key": "reqres-free-v1",
@@ -9,7 +8,7 @@ const HEADERS = {
 const getUsers = async (pageNumber) => {
   const response = await axios.get(`${API_BASE_URL}/users?page=${pageNumber}`, {
     headers: HEADERS,
-  }); 
+  });
   return response.data;
 };
 
@@ -19,7 +18,6 @@ const getUser = async (id) => {
   });
   return response.data;
 };
-
 
 const createUser = async ({ name, lastname, email, job }) => {
   const body = {
@@ -37,25 +35,24 @@ const createUser = async ({ name, lastname, email, job }) => {
 };
 
 const updateUser = async (id, { name, lastname, email, job }) => {
-    const body = {
-      name: name,
-      lastname: lastname,
-      email: email,
-      position: job,
-    };
-  
-    const response = await axios.put(`${API_BASE_URL}/users/${id}`, body, {
-      headers: HEADERS,
-    });
-  
-    return response.data;
+  const body = {
+    name: name,
+    lastname: lastname,
+    email: email,
+    position: job,
   };
 
+  const response = await axios.put(`${API_BASE_URL}/users/${id}`, body, {
+    headers: HEADERS,
+  });
 
- const deleteUser = async (userId) => {
+  return response.data;
+};
+
+const deleteUser = async (userId) => {
   await axios.delete(`${API_BASE_URL}/users/${userId}`, {
     headers: HEADERS,
   });
 };
 
-export default {getUsers,getUser,createUser,deleteUser,updateUser}
+export default { getUsers, getUser, createUser, deleteUser, updateUser };

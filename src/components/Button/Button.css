@@ -11,9 +11,9 @@
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(100, 108, 255, 0.08);
   transition:
-    background 0.3s cubic-bezier(.4,0,.2,1),
-    box-shadow 0.3s cubic-bezier(.4,0,.2,1),
-    transform 0.2s cubic-bezier(.4,0,.2,1);
+    background 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   margin-bottom: 16px;
   box-sizing: border-box;
   display: block;

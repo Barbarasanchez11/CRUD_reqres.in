@@ -1,27 +1,27 @@
-.createuser-main{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
-    width: 100%;
+.createuser-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
 }
-.createuser-form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    gap: 20px;
+.createuser-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  gap: 20px;
 }
 
 .input-container {
   width: 100%;
   max-width: 320px;
-  margin-bottom: 10PX;
+  margin-bottom: 10px;
 }
-.input-container input{
+.input-container input {
   margin-bottom: 10px;
 }
 .input-error {
@@ -31,7 +31,7 @@
   text-align: left;
 }
 
-.message-createuser{
+.message-createuser {
   color: red;
   margin-bottom: 10px;
 }

@@ -1,13 +1,12 @@
-import RoutesApp from './routes/Routes'
-import './styles/reset.css';
-
+import RoutesApp from "./routes/Routes";
+import "./styles/reset.css";
 
 const App = () => {
-  return(
+  return (
     <>
-    <RoutesApp />
+      <RoutesApp />
     </>
-  )
-}
- 
-export default App
+  );
+};
+
+export default App;
